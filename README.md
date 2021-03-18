@@ -14,4 +14,4 @@
     └── .gitignore                                  # contain files that should not be included in source control
     └── .terraform.lock.hcl                         # dependency lock file that tracks provider dependencies
 
-### Always run "terraform fmt" to maintain consistent styling of terraform code
+### Always run "terraform fmt" after making changes to maintain consistent styling of terraform code
