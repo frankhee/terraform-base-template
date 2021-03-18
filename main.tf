@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "default" {
-  name     = "random-azure-rm-name"
+  name     = var.random
   location = "West US 2"
 
   tags = {
