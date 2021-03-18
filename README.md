@@ -1,8 +1,9 @@
 # terraform template
-### base template for a terraform module
+### base template for a terraform module (sample terraform config files in /examples)
 
     .
-    ├── main.tf                                     # main set of configuration for your module, you can also create other configuration files and organize them however makes sense for your project
+    ├── main.tf                                     # main set of configuration for your module, you can also create other configuration files and organize them however makes sense for your project (see the aws example in /examples)
+    ├── locals.tf                                   # contain the local definitions for your module
     ├── variables.tf                                # contain the variable definitions for your module
     ├── data.tf                                     # contain the data definitions for your module
     ├── outputs.tf                                  # contain the output definitions for your module
