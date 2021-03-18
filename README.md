@@ -1,4 +1,4 @@
-# terraform template
+# terraform base template
 ### base template for a terraform module (sample terraform config files in /examples)
 
     .
