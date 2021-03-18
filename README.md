@@ -1,3 +1,7 @@
+# TF DOCS
+<!--- BEGIN_TF_DOCS --->
+<!--- END_TF_DOCS --->
+
 # terraform base template
 ### base template for a terraform module (sample terraform config files in /examples)
 
