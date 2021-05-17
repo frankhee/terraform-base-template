@@ -10,43 +10,30 @@ resource "azurerm_resource_group" "default" {
 }
 
 resource "azurerm_container_registry" "acr" {
-  name                     = "acmeSearch"
+  name                     = "sampledemoacr2021"
   resource_group_name      = azurerm_resource_group.default.name
   location                 = azurerm_resource_group.default.location
   sku                      = "Premium"
   admin_enabled            = false
-  georeplication_locations = ["East US"]
 }
 
-resource "azurerm_kubernetes_cluster" "default" {
-  name                = "${random_pet.prefix.id}-aks"
+resource "azurerm_kubernetes_cluster" "example_aks" {
+  name                = "sample_demo_aks_cluster_2021"
   location            = azurerm_resource_group.default.location
   resource_group_name = azurerm_resource_group.default.name
-  dns_prefix          = "${random_pet.prefix.id}-k8s"
+  dns_prefix          = "aksdemosample2021"
 
   default_node_pool {
-    name            = "default"
-    node_count      = 2
-    vm_size         = "Standard_D2_v2"
-    os_disk_size_gb = 30
+    name       = "default"
+    node_count = 1
+    vm_size    = "Standard_D2_v2"
   }
 
-  service_principal {
-    client_id     = var.appId
-    client_secret = var.password
-  }
-
-  role_based_access_control {
-    enabled = true
-  }
-
-  addon_profile {
-    kube_dashboard {
-      enabled = true
-    }
+  identity {
+    type = "SystemAssigned"
   }
 
   tags = {
-    environment = "Demo"
+    Environment = "demo"
   }
 }

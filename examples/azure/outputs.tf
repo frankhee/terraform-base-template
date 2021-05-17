@@ -7,7 +7,7 @@ output "id" {
 }
 
 output "kubernetes_cluster_name" {
-  value = azurerm_kubernetes_cluster.default.name
+  value = azurerm_kubernetes_cluster.example_aks.name
 }
 
 # output "host" {
